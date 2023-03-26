@@ -12,3 +12,14 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+const title = document.querySelector('.gallery');
+
+const titleImg = ({url ,alt}) => 
+`<li><img src ='${url}' alt = '${alt}'></li>`;
+
+const titleMarkup = images.reduce(
+(acc, item) => acc + titleImg(item),
+""
+);
+title.insertAdjacentHTML("afterbegin", titleMarkup);
+console.log(titleImg)
